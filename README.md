@@ -30,7 +30,8 @@ intentionally empty.
    brew install openjdk
    ```
 
-   On Windows or Linux, install any JDK 17+ build (for example Eclipse Temurin). Check it
+   This installs the latest JDK, which is fine: anything from 17 up works. On Windows or
+   Linux, install any JDK 17+ build (for example Eclipse Temurin). Check it
    with `java -version`.
 
 2. **Install Google Chrome** if it is not already installed.
@@ -100,6 +101,7 @@ Useful options:
 | `./mvnw clean test -Dheadless=true`       | Run without opening a browser window           |
 | `./mvnw clean test -Dgroups=smoke`        | Run one group (see the table above)            |
 | `./mvnw clean test -Dgroups=cart,checkout` | Run several groups                             |
+| `./mvnw clean test -Dgroups=typo`         | Fails with "No tests were executed" (by design) |
 | `./mvnw clean test -DtimeoutSeconds=20`   | Change the element wait timeout (default 10 s) |
 | `./mvnw clean test -DbaseUrl=https://...` | Point the suite at another environment         |
 
@@ -107,7 +109,8 @@ Headless mode switches on automatically when the `CI` environment variable is `t
 
 ## Reports and logs
 
-Everything is written under `target/` after a run:
+Everything is written under `target/` after a run (the screenshots folder only appears when
+something fails):
 
 | Path                                          | What it is                                                         |
 | --------------------------------------------- | ------------------------------------------------------------------ |
@@ -116,19 +119,22 @@ Everything is written under `target/` after a run:
 | `target/surefire-reports/testng-results.xml`  | TestNG XML results                                                 |
 | `target/surefire-reports/junitreports/`       | JUnit-style XML, understood by most CI dashboards                  |
 | `target/logs/test-run.log`                    | Step-by-step log (the same lines are printed to the console)       |
-| `target/screenshots/`                         | A screenshot per failed test, named after the test method          |
+| `target/screenshots/`                         | A screenshot per failure, named `<method>-<timestamp>.png`         |
 
 Open `index.html` in a browser to read the report. Green means passed and red means failed;
 click a failed method to see the assertion message and stack trace, then find the matching
 screenshot in `target/screenshots/`.
 
-In the log, each test has a `START` line, indented `>` lines for every page action, and a
-`PASSED` / `FAILED` / `SKIPPED` line, followed by a `FINISHED` total.
+In the log, `SETUP` lines mark the browser start, login and browser close around each test.
+Each test has a `START` line, indented `>` lines for every page action, and a
+`PASSED` / `FAILED` / `SKIPPED` line. A `FINISHED` total closes the run. Passwords are masked.
 
-If a setup step such as login fails, the affected tests are reported as skipped and a
-screenshot of the page is still saved, named after the setup method.
+If a setup step such as login fails, the log shows a `SETUP FAILED` line, a screenshot named
+after the setup method is saved, the tests that depended on it are reported as skipped, and
+the build fails.
 
-A report from a real run is committed in [`sample-report/`](sample-report/) as an example.
+A report from a real run is committed in [`sample-report/`](sample-report/) as an example
+(its `test-run.log` sits next to the HTML there, rather than in a separate `logs` folder).
 
 ## CI/CD (GitHub Actions)
 
@@ -149,6 +155,10 @@ installs JDK 17.
 ## Project structure
 
 ```
+pom.xml                         Build definition (dependencies, surefire, TestNG suite)
+mvnw, mvnw.cmd, .mvn/           Maven wrapper, so Maven itself need not be installed
+.github/workflows/ui-tests.yml  GitHub Actions pipeline
+sample-report/                  Report from a real run, as an example
 src/main/java/com/saucedemo/
   config/Config.java            Run settings (URL, credentials, timeout, headless)
   driver/DriverFactory.java     Builds the Chrome session
@@ -158,7 +168,8 @@ src/main/java/com/saucedemo/
     CheckoutInfoPage, CheckoutOverviewPage, CheckoutCompletePage
   model/
     SortOption.java             Sort dropdown entries and the order each should produce
-    SocialLink.java             Abstract footer icon; TwitterLink and FacebookLink extend it
+    SocialLink.java             Abstract footer icon
+    TwitterLink.java, FacebookLink.java   The two concrete icons
   utils/
     BrowserUtils.java           New-tab handling, screenshots
     Log.java                    Console + file logging
@@ -187,11 +198,19 @@ src/test/resources/testng.xml   Suite definition
 - **Dependencies.** Only Selenium and TestNG. Logging uses `java.util.logging` and reports
   are TestNG's built-in ones, so there is nothing extra to maintain.
 
+## Known limits
+
+- Tests run one at a time. The suite is not set up for TestNG parallel execution; each test
+  class keeps its browser in an instance field.
+- The social link tests check which site the new tab lands on, not the content of that page,
+  because X and Facebook may show a login wall to automated browsers.
+
 ## Extending
 
 - **New page:** extend `BasePage`, implement `readyLocator()`, add action methods.
 - **New test:** extend `LoggedInTest` (or `BaseTest` to start on the login page), tag it with
   groups, and add the class to `src/test/resources/testng.xml`.
+- **Run one class:** `./mvnw clean test -Dtest=CheckoutTest`.
 - **New social icon:** add a `SocialLink` subclass and one line in the `socialLinks` data
   provider.
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="30.835" tests="8" errors="0" skipped="0" failures="0" flakes="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="31.326" tests="8" errors="0" skipped="0" failures="0" flakes="0">
   <properties>
     <property name="java.specification.version" value="27"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="PK"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/27/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/barq/PycharmProjects/saucedemo-automation/target/surefire/surefirebooter-20261005153453172_3.jar /Users/barq/PycharmProjects/saucedemo-automation/target/surefire 2026-10-05T15-34-53_097-jvmRun1 surefire-20261005153453172_1tmp surefire_0-20261005153453172_2tmp"/>
+    <property name="sun.java.command" value="/Users/barq/PycharmProjects/saucedemo-automation/target/surefire/surefirebooter-20261005161612069_3.jar /Users/barq/PycharmProjects/saucedemo-automation/target/surefire 2026-10-05T16-16-12_004-jvmRun1 surefire-20261005161612069_1tmp surefire_0-20261005161612069_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/barq/PycharmProjects/saucedemo-automation/target/test-classes:/Users/barq/PycharmProjects/saucedemo-automation/target/classes:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-java/4.50.0/selenium-java-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-api/4.50.0/selenium-api-4.50.0.jar:/Users/barq/.m2/repository/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.50.0/selenium-chrome-driver-4.50.0.jar:/Users/barq/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.50.0/selenium-chromium-driver-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-json/4.50.0/selenium-json-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.50.0/selenium-manager-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-devtools-latest/4.50.0/selenium-devtools-latest-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v152/4.50.0/selenium-devtools-v152-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v153/4.50.0/selenium-devtools-v153-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v154/4.50.0/selenium-devtools-v154-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.50.0/selenium-edge-driver-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.50.0/selenium-firefox-driver-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-http/4.50.0/selenium-http-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.50.0/selenium-ie-driver-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.50.0/selenium-remote-driver-4.50.0.jar:/Users/barq/.m2/repository/com/google/guava/guava/33.7.1-jre/guava-33.7.1-jre.jar:/Users/barq/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/Users/barq/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/barq/.m2/repository/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.jar:/Users/barq/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-api/1.66.0/opentelemetry-api-1.66.0.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-context/1.66.0/opentelemetry-context-1.66.0.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-common/1.66.0/opentelemetry-common-1.66.0.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.66.0/opentelemetry-exporter-logging-1.66.0.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.66.0/opentelemetry-sdk-common-1.66.0.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.66.0/opentelemetry-sdk-extension-autoconfigure-spi-1.66.0.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.66.0/opentelemetry-sdk-extension-autoconfigure-1.66.0.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.66.0/opentelemetry-sdk-trace-1.66.0.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.66.0/opentelemetry-sdk-1.66.0.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.66.0/opentelemetry-sdk-metrics-1.66.0.jar:/Users/barq/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.66.0/opentelemetry-sdk-logs-1.66.0.jar:/Users/barq/.m2/repository/net/bytebuddy/byte-buddy/1.18.14/byte-buddy-1.18.14.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-os/4.50.0/selenium-os-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.50.0/selenium-safari-driver-4.50.0.jar:/Users/barq/.m2/repository/org/seleniumhq/selenium/selenium-support/4.50.0/selenium-support-4.50.0.jar:/Users/barq/.m2/repository/org/testng/testng/7.12.0/testng-7.12.0.jar:/Users/barq/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/Users/barq/.m2/repository/org/jcommander/jcommander/1.83/jcommander-1.83.jar:/Users/barq/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/barq/PycharmProjects/saucedemo-automation/target/surefire/surefirebooter-20261005153453172_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/barq/PycharmProjects/saucedemo-automation/target/surefire/surefirebooter-20261005161612069_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="27"/>
@@ -48,11 +48,11 @@
     <property name="java.version" value="27"/>
     <property name="user.dir" value="/Users/barq/PycharmProjects/saucedemo-automation"/>
     <property name="os.arch" value="aarch64"/>
+    <property name="groups" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.util.logging.SimpleFormatter.format" value="%1$tT.%1$tL %4$-7s %5$s%6$s%n"/>
     <property name="headless" value="true"/>
     <property name="native.encoding" value="UTF-8"/>
-    <property name="baseUrl" value="https://www.saucedemo.com/"/>
     <property name="java.library.path" value="/Users/barq/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="UTF-8"/>
@@ -63,104 +63,129 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="71.0"/>
   </properties>
-  <testcase name="standardUserCanLogIn" classname="com.saucedemo.tests.LoginTest" time="0.369">
+  <testcase name="standardUserCanLogIn" classname="com.saucedemo.tests.LoginTest" time="0.347">
     <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
 SLF4J(W): Defaulting to no-operation (NOP) logger implementation
 SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
-15:34:56.408 INFO      > Open https://www.saucedemo.com/
-15:34:57.113 INFO    START   LoginTest.standardUserCanLogIn
-15:34:57.139 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
-15:34:57.262 INFO      > LoginPage: type 'secret_sauce' into By.cssSelector: [data-test='password']
-15:34:57.346 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
-15:34:57.481 INFO    PASSED  LoginTest.standardUserCanLogIn (368 ms)
+16:16:12.491 INFO    SETUP   LoginTest.startBrowser
+16:16:14.464 INFO      > Open https://www.saucedemo.com/
+16:16:15.268 INFO    START   LoginTest.standardUserCanLogIn
+16:16:15.292 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
+16:16:15.403 INFO      > LoginPage: type ******** into By.cssSelector: [data-test='password']
+16:16:15.502 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
 ]]></system-err>
   </testcase>
-  <testcase name="productsAreSortedByName[NAME_A_TO_Z](1)" classname="com.saucedemo.tests.ProductSortTest" time="0.068">
-    <system-err><![CDATA[15:34:58.914 INFO      > Open https://www.saucedemo.com/
-15:34:59.624 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
-15:34:59.729 INFO      > LoginPage: type 'secret_sauce' into By.cssSelector: [data-test='password']
-15:34:59.811 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
-15:34:59.879 INFO    START   ProductSortTest.productsAreSortedByName[NAME_A_TO_Z]
-15:34:59.880 INFO      > InventoryPage: sort by NAME_A_TO_Z
-15:34:59.946 INFO    PASSED  ProductSortTest.productsAreSortedByName[NAME_A_TO_Z] (68 ms)
+  <testcase name="productsAreSortedByName[NAME_A_TO_Z](1)" classname="com.saucedemo.tests.ProductSortTest" time="0.296">
+    <system-err><![CDATA[16:16:15.618 INFO    PASSED  LoginTest.standardUserCanLogIn (349 ms)
+16:16:15.619 INFO    SETUP   LoginTest.closeBrowser
+16:16:15.718 INFO    SETUP   ProductSortTest.startBrowser
+16:16:16.786 INFO      > Open https://www.saucedemo.com/
+16:16:17.575 INFO    SETUP   ProductSortTest.login
+16:16:17.576 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
+16:16:17.678 INFO      > LoginPage: type ******** into By.cssSelector: [data-test='password']
+16:16:17.777 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
+16:16:17.862 INFO    START   ProductSortTest.productsAreSortedByName[NAME_A_TO_Z]
+16:16:17.864 INFO      > InventoryPage: sort by NAME_Z_TO_A
+16:16:18.063 INFO      > InventoryPage: sort by NAME_A_TO_Z
 ]]></system-err>
   </testcase>
-  <testcase name="productsAreSortedByName[NAME_Z_TO_A](2)" classname="com.saucedemo.tests.ProductSortTest" time="0.072">
-    <system-err><![CDATA[15:35:01.260 INFO      > Open https://www.saucedemo.com/
-15:35:07.098 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
-15:35:07.192 INFO      > LoginPage: type 'secret_sauce' into By.cssSelector: [data-test='password']
-15:35:07.272 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
-15:35:07.343 INFO    START   ProductSortTest.productsAreSortedByName[NAME_Z_TO_A]
-15:35:07.344 INFO      > InventoryPage: sort by NAME_Z_TO_A
-15:35:07.415 INFO    PASSED  ProductSortTest.productsAreSortedByName[NAME_Z_TO_A] (72 ms)
+  <testcase name="productsAreSortedByName[NAME_Z_TO_A](2)" classname="com.saucedemo.tests.ProductSortTest" time="0.147">
+    <system-err><![CDATA[16:16:18.159 INFO    PASSED  ProductSortTest.productsAreSortedByName[NAME_A_TO_Z] (297 ms)
+16:16:18.160 INFO    SETUP   ProductSortTest.closeBrowser
+16:16:18.259 INFO    SETUP   ProductSortTest.startBrowser
+16:16:19.563 INFO      > Open https://www.saucedemo.com/
+16:16:25.101 INFO    SETUP   ProductSortTest.login
+16:16:25.103 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
+16:16:25.208 INFO      > LoginPage: type ******** into By.cssSelector: [data-test='password']
+16:16:25.335 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
+16:16:25.912 INFO    START   ProductSortTest.productsAreSortedByName[NAME_Z_TO_A]
+16:16:25.913 INFO      > InventoryPage: sort by NAME_A_TO_Z
+16:16:25.989 INFO      > InventoryPage: sort by NAME_Z_TO_A
 ]]></system-err>
   </testcase>
-  <testcase name="productCanBeAddedRemovedAndReAdded" classname="com.saucedemo.tests.CartTest" time="0.714">
-    <system-err><![CDATA[15:35:08.867 INFO      > Open https://www.saucedemo.com/
-15:35:09.565 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
-15:35:09.654 INFO      > LoginPage: type 'secret_sauce' into By.cssSelector: [data-test='password']
-15:35:09.738 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
-15:35:09.798 INFO    START   CartTest.productCanBeAddedRemovedAndReAdded
-15:35:09.798 INFO      > InventoryPage: click By.cssSelector: [data-test='add-to-cart-sauce-labs-backpack']
-15:35:09.851 INFO      > InventoryPage: click By.cssSelector: [data-test='remove-sauce-labs-backpack']
-15:35:09.890 INFO      > InventoryPage: click By.cssSelector: [data-test='add-to-cart-sauce-labs-backpack']
-15:35:09.936 INFO      > InventoryPage: click By.cssSelector: [data-test='shopping-cart-link']
-15:35:10.511 INFO    PASSED  CartTest.productCanBeAddedRemovedAndReAdded (713 ms)
+  <testcase name="productCanBeAddedRemovedAndReAdded" classname="com.saucedemo.tests.CartTest" time="0.2">
+    <system-err><![CDATA[16:16:26.060 INFO    PASSED  ProductSortTest.productsAreSortedByName[NAME_Z_TO_A] (148 ms)
+16:16:26.061 INFO    SETUP   ProductSortTest.closeBrowser
+16:16:26.152 INFO    SETUP   CartTest.startBrowser
+16:16:27.538 INFO      > Open https://www.saucedemo.com/
+16:16:28.281 INFO    SETUP   CartTest.login
+16:16:28.282 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
+16:16:28.374 INFO      > LoginPage: type ******** into By.cssSelector: [data-test='password']
+16:16:28.460 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
+16:16:28.519 INFO    START   CartTest.productCanBeAddedRemovedAndReAdded
+16:16:28.520 INFO      > InventoryPage: click By.cssSelector: [data-test='add-to-cart-sauce-labs-backpack']
+16:16:28.578 INFO      > InventoryPage: click By.cssSelector: [data-test='remove-sauce-labs-backpack']
+16:16:28.618 INFO      > InventoryPage: click By.cssSelector: [data-test='add-to-cart-sauce-labs-backpack']
+16:16:28.666 INFO      > InventoryPage: click By.cssSelector: [data-test='shopping-cart-link']
 ]]></system-err>
   </testcase>
-  <testcase name="blankFirstNameShowsError" classname="com.saucedemo.tests.CheckoutTest" time="0.173">
-    <system-err><![CDATA[15:35:11.930 INFO      > Open https://www.saucedemo.com/
-15:35:12.634 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
-15:35:12.726 INFO      > LoginPage: type 'secret_sauce' into By.cssSelector: [data-test='password']
-15:35:12.803 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
-15:35:12.862 INFO      > InventoryPage: click By.cssSelector: [data-test='add-to-cart-sauce-labs-backpack']
-15:35:12.893 INFO      > InventoryPage: click By.cssSelector: [data-test='shopping-cart-link']
-15:35:12.928 INFO      > CartPage: click By.cssSelector: [data-test='checkout']
-15:35:12.977 INFO    START   CheckoutTest.blankFirstNameShowsError
-15:35:12.977 INFO      > CheckoutInfoPage: type '' into By.cssSelector: [data-test='firstName']
-15:35:13.011 INFO      > CheckoutInfoPage: type 'DEF' into By.cssSelector: [data-test='lastName']
-15:35:13.054 INFO      > CheckoutInfoPage: type '123456' into By.cssSelector: [data-test='postalCode']
-15:35:13.090 INFO      > CheckoutInfoPage: click By.cssSelector: [data-test='continue']
-15:35:13.149 INFO    PASSED  CheckoutTest.blankFirstNameShowsError (173 ms)
+  <testcase name="blankFirstNameShowsError" classname="com.saucedemo.tests.CheckoutTest" time="0.175">
+    <system-err><![CDATA[16:16:28.720 INFO    PASSED  CartTest.productCanBeAddedRemovedAndReAdded (200 ms)
+16:16:28.720 INFO    SETUP   CartTest.closeBrowser
+16:16:28.808 INFO    SETUP   CheckoutTest.startBrowser
+16:16:30.124 INFO      > Open https://www.saucedemo.com/
+16:16:30.871 INFO    SETUP   CheckoutTest.login
+16:16:30.871 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
+16:16:30.968 INFO      > LoginPage: type ******** into By.cssSelector: [data-test='password']
+16:16:31.050 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
+16:16:31.112 INFO    SETUP   CheckoutTest.startCheckoutWithOneProduct
+16:16:31.112 INFO      > InventoryPage: click By.cssSelector: [data-test='add-to-cart-sauce-labs-backpack']
+16:16:31.142 INFO      > InventoryPage: click By.cssSelector: [data-test='shopping-cart-link']
+16:16:31.180 INFO      > CartPage: click By.cssSelector: [data-test='checkout']
+16:16:31.750 INFO    START   CheckoutTest.blankFirstNameShowsError
+16:16:31.750 INFO      > CheckoutInfoPage: type '' into By.cssSelector: [data-test='firstName']
+16:16:31.785 INFO      > CheckoutInfoPage: type 'DEF' into By.cssSelector: [data-test='lastName']
+16:16:31.825 INFO      > CheckoutInfoPage: type '123456' into By.cssSelector: [data-test='postalCode']
+16:16:31.864 INFO      > CheckoutInfoPage: click By.cssSelector: [data-test='continue']
 ]]></system-err>
   </testcase>
-  <testcase name="orderCanBeCompleted" classname="com.saucedemo.tests.CheckoutTest" time="0.728">
-    <system-err><![CDATA[15:35:14.181 INFO      > Open https://www.saucedemo.com/
-15:35:14.874 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
-15:35:14.961 INFO      > LoginPage: type 'secret_sauce' into By.cssSelector: [data-test='password']
-15:35:15.040 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
-15:35:15.101 INFO      > InventoryPage: click By.cssSelector: [data-test='add-to-cart-sauce-labs-backpack']
-15:35:15.129 INFO      > InventoryPage: click By.cssSelector: [data-test='shopping-cart-link']
-15:35:15.162 INFO      > CartPage: click By.cssSelector: [data-test='checkout']
-15:35:15.205 INFO    START   CheckoutTest.orderCanBeCompleted
-15:35:15.205 INFO      > CheckoutInfoPage: type 'ABC' into By.cssSelector: [data-test='firstName']
-15:35:15.238 INFO      > CheckoutInfoPage: type 'DEF' into By.cssSelector: [data-test='lastName']
-15:35:15.275 INFO      > CheckoutInfoPage: type '123456' into By.cssSelector: [data-test='postalCode']
-15:35:15.310 INFO      > CheckoutInfoPage: click By.cssSelector: [data-test='continue']
-15:35:15.362 INFO      > CheckoutOverviewPage: click By.cssSelector: [data-test='finish']
-15:35:15.932 INFO    PASSED  CheckoutTest.orderCanBeCompleted (727 ms)
+  <testcase name="orderCanBeCompleted" classname="com.saucedemo.tests.CheckoutTest" time="0.773">
+    <system-err><![CDATA[16:16:31.925 INFO    PASSED  CheckoutTest.blankFirstNameShowsError (175 ms)
+16:16:31.926 INFO    SETUP   CheckoutTest.closeBrowser
+16:16:32.014 INFO    SETUP   CheckoutTest.startBrowser
+16:16:32.943 INFO      > Open https://www.saucedemo.com/
+16:16:33.700 INFO    SETUP   CheckoutTest.login
+16:16:33.700 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
+16:16:33.794 INFO      > LoginPage: type ******** into By.cssSelector: [data-test='password']
+16:16:33.876 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
+16:16:33.936 INFO    SETUP   CheckoutTest.startCheckoutWithOneProduct
+16:16:33.936 INFO      > InventoryPage: click By.cssSelector: [data-test='add-to-cart-sauce-labs-backpack']
+16:16:33.967 INFO      > InventoryPage: click By.cssSelector: [data-test='shopping-cart-link']
+16:16:34.003 INFO      > CartPage: click By.cssSelector: [data-test='checkout']
+16:16:34.555 INFO    START   CheckoutTest.orderCanBeCompleted
+16:16:34.556 INFO      > CheckoutInfoPage: type 'ABC' into By.cssSelector: [data-test='firstName']
+16:16:34.606 INFO      > CheckoutInfoPage: type 'DEF' into By.cssSelector: [data-test='lastName']
+16:16:34.642 INFO      > CheckoutInfoPage: type '123456' into By.cssSelector: [data-test='postalCode']
+16:16:34.706 INFO      > CheckoutInfoPage: click By.cssSelector: [data-test='continue']
+16:16:34.758 INFO      > CheckoutOverviewPage: click By.cssSelector: [data-test='finish']
 ]]></system-err>
   </testcase>
-  <testcase name="socialIconOpensCorrectLink[Twitter](1)" classname="com.saucedemo.tests.SocialLinksTest" time="0.66">
-    <system-err><![CDATA[15:35:17.380 INFO      > Open https://www.saucedemo.com/
-15:35:18.060 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
-15:35:18.155 INFO      > LoginPage: type 'secret_sauce' into By.cssSelector: [data-test='password']
-15:35:18.234 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
-15:35:18.798 INFO    START   SocialLinksTest.socialIconOpensCorrectLink[Twitter]
-15:35:18.821 INFO      > InventoryPage: click By.cssSelector: [data-test='social-x']
-15:35:19.389 INFO      > Twitter icon opened https://x.com/saucelabs
-15:35:19.459 INFO    PASSED  SocialLinksTest.socialIconOpensCorrectLink[Twitter] (661 ms)
+  <testcase name="socialIconOpensCorrectLink[Twitter](1)" classname="com.saucedemo.tests.SocialLinksTest" time="1.222">
+    <system-err><![CDATA[16:16:35.329 INFO    PASSED  CheckoutTest.orderCanBeCompleted (774 ms)
+16:16:35.330 INFO    SETUP   CheckoutTest.closeBrowser
+16:16:35.431 INFO    SETUP   SocialLinksTest.startBrowser
+16:16:36.793 INFO      > Open https://www.saucedemo.com/
+16:16:37.539 INFO    SETUP   SocialLinksTest.login
+16:16:37.539 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
+16:16:37.630 INFO      > LoginPage: type ******** into By.cssSelector: [data-test='password']
+16:16:37.710 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
+16:16:37.770 INFO    START   SocialLinksTest.socialIconOpensCorrectLink[Twitter]
+16:16:37.785 INFO      > InventoryPage: click By.cssSelector: [data-test='social-x']
+16:16:38.922 INFO      > Twitter icon opened https://x.com/saucelabs
 ]]></system-err>
   </testcase>
-  <testcase name="socialIconOpensCorrectLink[Facebook](2)" classname="com.saucedemo.tests.SocialLinksTest" time="2.208">
-    <system-err><![CDATA[15:35:20.892 INFO      > Open https://www.saucedemo.com/
-15:35:21.576 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
-15:35:21.663 INFO      > LoginPage: type 'secret_sauce' into By.cssSelector: [data-test='password']
-15:35:21.740 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
-15:35:21.798 INFO    START   SocialLinksTest.socialIconOpensCorrectLink[Facebook]
-15:35:21.809 INFO      > InventoryPage: click By.cssSelector: [data-test='social-facebook']
-15:35:23.939 INFO      > Facebook icon opened https://www.facebook.com/saucelabs
-15:35:24.005 INFO    PASSED  SocialLinksTest.socialIconOpensCorrectLink[Facebook] (2207 ms)
+  <testcase name="socialIconOpensCorrectLink[Facebook](2)" classname="com.saucedemo.tests.SocialLinksTest" time="1.987">
+    <system-err><![CDATA[16:16:38.992 INFO    PASSED  SocialLinksTest.socialIconOpensCorrectLink[Twitter] (1223 ms)
+16:16:38.992 INFO    SETUP   SocialLinksTest.closeBrowser
+16:16:39.088 INFO    SETUP   SocialLinksTest.startBrowser
+16:16:40.401 INFO      > Open https://www.saucedemo.com/
+16:16:41.171 INFO    SETUP   SocialLinksTest.login
+16:16:41.172 INFO      > LoginPage: type 'standard_user' into By.cssSelector: [data-test='username']
+16:16:41.263 INFO      > LoginPage: type ******** into By.cssSelector: [data-test='password']
+16:16:41.341 INFO      > LoginPage: click By.cssSelector: [data-test='login-button']
+16:16:41.399 INFO    START   SocialLinksTest.socialIconOpensCorrectLink[Facebook]
+16:16:41.414 INFO      > InventoryPage: click By.cssSelector: [data-test='social-facebook']
+16:16:43.318 INFO      > Facebook icon opened https://www.facebook.com/saucelabs
 ]]></system-err>
   </testcase>
 </testsuite>

@@ -16,9 +16,7 @@
         <selenium.version>4.50.0</selenium.version>
         <testng.version>7.12.0</testng.version>
 
-        <!-- Overridable from the command line, e.g. -Dheadless=true -Dgroups=smoke -->
-        <headless>false</headless>
-        <baseUrl>https://www.saucedemo.com/</baseUrl>
+        <!-- TestNG groups to run, e.g. -Dgroups=smoke. Empty runs everything. -->
         <groups/>
     </properties>
 
@@ -54,10 +52,8 @@
                         <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <groups>${groups}</groups>
-                    <systemPropertyVariables>
-                        <headless>${headless}</headless>
-                        <baseUrl>${baseUrl}</baseUrl>
-                    </systemPropertyVariables>
+                    <!-- A mistyped group name should fail the build, not pass with 0 tests. -->
+                    <failIfNoTests>true</failIfNoTests>
                 </configuration>
             </plugin>
         </plugins>

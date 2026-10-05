@@ -28,6 +28,18 @@ public class CheckoutInfoPage extends BasePage {
         return this;
     }
 
+    public String firstName() {
+        return valueOf(FIRST_NAME);
+    }
+
+    public String lastName() {
+        return valueOf(LAST_NAME);
+    }
+
+    public String postalCode() {
+        return valueOf(POSTAL_CODE);
+    }
+
     /** Use when the details are valid and the overview page is expected next. */
     public CheckoutOverviewPage continueToOverview() {
         click(CONTINUE_BUTTON);

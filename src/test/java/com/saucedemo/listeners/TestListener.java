@@ -32,6 +32,11 @@ public class TestListener implements ITestListener, IConfigurationListener {
         saveScreenshot(result);
     }
 
+    @Override
+    public void beforeConfiguration(ITestResult result) {
+        Log.info("SETUP   " + describe(result));
+    }
+
     /** A failing setup step (for example login) skips its tests, so capture the page here. */
     @Override
     public void onConfigurationFailure(ITestResult result) {
@@ -47,11 +52,12 @@ public class TestListener implements ITestListener, IConfigurationListener {
     @Override
     public void onFinish(ITestContext context) {
         Log.info(String.format(
-                "FINISHED %s: %d passed, %d failed, %d skipped",
+                "FINISHED %s: %d passed, %d failed, %d skipped, %d setup failures",
                 context.getName(),
                 context.getPassedTests().size(),
                 context.getFailedTests().size(),
-                context.getSkippedTests().size()));
+                context.getSkippedTests().size(),
+                context.getFailedConfigurations().size()));
     }
 
     private static void saveScreenshot(ITestResult result) {

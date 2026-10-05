@@ -4,6 +4,7 @@ import com.saucedemo.model.SocialLink;
 import com.saucedemo.model.SortOption;
 import com.saucedemo.utils.Log;
 import java.util.List;
+import java.util.Locale;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -71,6 +72,6 @@ public class InventoryPage extends BasePage {
 
     /** "Sauce Labs Backpack" -> "sauce-labs-backpack", as used in the button ids. */
     private static String slug(String productName) {
-        return productName.toLowerCase().replace(' ', '-');
+        return productName.toLowerCase(Locale.ROOT).replace(' ', '-');
     }
 }

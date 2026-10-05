@@ -2,6 +2,7 @@ package com.saucedemo.model;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Locale;
 import org.openqa.selenium.By;
 
 /**
@@ -30,7 +31,7 @@ public abstract class SocialLink {
         if (host == null) {
             return false;
         }
-        String normalisedHost = host.toLowerCase();
+        String normalisedHost = host.toLowerCase(Locale.ROOT);
         return acceptedDomains().stream()
                 .anyMatch(domain -> normalisedHost.equals(domain)
                         || normalisedHost.endsWith("." + domain));
