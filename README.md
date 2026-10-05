@@ -133,8 +133,8 @@ If a setup step such as login fails, the log shows a `SETUP FAILED` line, a scre
 after the setup method is saved, the tests that depended on it are reported as skipped, and
 the build fails.
 
-A report from a real run is committed in [`sample-report/`](sample-report/) as an example
-(its `test-run.log` sits next to the HTML there, rather than in a separate `logs` folder).
+A report from a real pipeline run is committed in [`sample-report/`](sample-report/) as an
+example (its `test-run.log` sits next to the HTML there, rather than in a separate `logs` folder).
 
 ## CI/CD (GitHub Actions)
 
@@ -158,7 +158,7 @@ installs JDK 17.
 pom.xml                         Build definition (dependencies, surefire, TestNG suite)
 mvnw, mvnw.cmd, .mvn/           Maven wrapper, so Maven itself need not be installed
 .github/workflows/ui-tests.yml  GitHub Actions pipeline
-sample-report/                  Report from a real run, as an example
+sample-report/                  Report from a real pipeline run, as an example
 src/main/java/com/saucedemo/
   config/Config.java            Run settings (URL, credentials, timeout, headless)
   driver/DriverFactory.java     Builds the Chrome session

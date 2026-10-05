@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-10-05T11:43:36 UTC" name="SauceDemo Suite" finished-at="2026-10-05T11:43:53 UTC" duration-ms="16960">
+    <groups>
+      <group name="negative">
+        <method signature="CheckoutTest.blankFirstNameShowsError()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" name="blankFirstNameShowsError" class="com.saucedemo.tests.CheckoutTest"/>
+      </group> <!-- negative -->
+      <group name="social">
+        <method signature="SocialLinksTest.socialIconOpensCorrectLink(com.saucedemo.model.SocialLink)[pri:0, instance:com.saucedemo.tests.SocialLinksTest@79b06cab]" name="socialIconOpensCorrectLink" class="com.saucedemo.tests.SocialLinksTest"/>
+      </group> <!-- social -->
+      <group name="regression">
+        <method signature="CheckoutTest.blankFirstNameShowsError()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" name="blankFirstNameShowsError" class="com.saucedemo.tests.CheckoutTest"/>
+        <method signature="ProductSortTest.productsAreSortedByName(com.saucedemo.model.SortOption)[pri:0, instance:com.saucedemo.tests.ProductSortTest@4313f5bc]" name="productsAreSortedByName" class="com.saucedemo.tests.ProductSortTest"/>
+        <method signature="SocialLinksTest.socialIconOpensCorrectLink(com.saucedemo.model.SocialLink)[pri:0, instance:com.saucedemo.tests.SocialLinksTest@79b06cab]" name="socialIconOpensCorrectLink" class="com.saucedemo.tests.SocialLinksTest"/>
+      </group> <!-- regression -->
+      <group name="sorting">
+        <method signature="ProductSortTest.productsAreSortedByName(com.saucedemo.model.SortOption)[pri:0, instance:com.saucedemo.tests.ProductSortTest@4313f5bc]" name="productsAreSortedByName" class="com.saucedemo.tests.ProductSortTest"/>
+      </group> <!-- sorting -->
+      <group name="smoke">
+        <method signature="CartTest.productCanBeAddedRemovedAndReAdded()[pri:0, instance:com.saucedemo.tests.CartTest@363ee3a2]" name="productCanBeAddedRemovedAndReAdded" class="com.saucedemo.tests.CartTest"/>
+        <method signature="CheckoutTest.orderCanBeCompleted()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" name="orderCanBeCompleted" class="com.saucedemo.tests.CheckoutTest"/>
+        <method signature="LoginTest.standardUserCanLogIn()[pri:0, instance:com.saucedemo.tests.LoginTest@6973bf95]" name="standardUserCanLogIn" class="com.saucedemo.tests.LoginTest"/>
+      </group> <!-- smoke -->
+      <group name="login">
+        <method signature="LoginTest.standardUserCanLogIn()[pri:0, instance:com.saucedemo.tests.LoginTest@6973bf95]" name="standardUserCanLogIn" class="com.saucedemo.tests.LoginTest"/>
+      </group> <!-- login -->
+      <group name="checkout">
+        <method signature="CheckoutTest.blankFirstNameShowsError()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" name="blankFirstNameShowsError" class="com.saucedemo.tests.CheckoutTest"/>
+        <method signature="CheckoutTest.orderCanBeCompleted()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" name="orderCanBeCompleted" class="com.saucedemo.tests.CheckoutTest"/>
+      </group> <!-- checkout -->
+      <group name="cart">
+        <method signature="CartTest.productCanBeAddedRemovedAndReAdded()[pri:0, instance:com.saucedemo.tests.CartTest@363ee3a2]" name="productCanBeAddedRemovedAndReAdded" class="com.saucedemo.tests.CartTest"/>
+      </group> <!-- cart -->
+    </groups>
+    <test started-at="2026-10-05T11:43:36 UTC" name="SauceDemo user journeys" finished-at="2026-10-05T11:43:53 UTC" duration-ms="16960">
+      <class name="com.saucedemo.tests.SocialLinksTest">
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.saucedemo.tests.SocialLinksTest@79b06cab]" started-at="2026-10-05T11:43:49 UTC" name="startBrowser" finished-at="2026-10-05T11:43:49 UTC" duration-ms="592" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.saucedemo.tests.SocialLinksTest@79b06cab]" started-at="2026-10-05T11:43:49 UTC" name="login" finished-at="2026-10-05T11:43:49 UTC" duration-ms="348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="socialIconOpensCorrectLink(com.saucedemo.model.SocialLink)[pri:0, instance:com.saucedemo.tests.SocialLinksTest@79b06cab]" started-at="2026-10-05T11:43:49 UTC" name="socialIconOpensCorrectLink" description="Footer social icon opens the correct link in a new tab" data-provider="socialLinks" finished-at="2026-10-05T11:43:50 UTC" duration-ms="694" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Twitter]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- socialIconOpensCorrectLink -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.saucedemo.tests.SocialLinksTest@79b06cab]" started-at="2026-10-05T11:43:50 UTC" name="closeBrowser" finished-at="2026-10-05T11:43:50 UTC" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.saucedemo.tests.SocialLinksTest@79b06cab]" started-at="2026-10-05T11:43:50 UTC" name="startBrowser" finished-at="2026-10-05T11:43:51 UTC" duration-ms="650" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.saucedemo.tests.SocialLinksTest@79b06cab]" started-at="2026-10-05T11:43:51 UTC" name="login" finished-at="2026-10-05T11:43:51 UTC" duration-ms="351" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="socialIconOpensCorrectLink(com.saucedemo.model.SocialLink)[pri:0, instance:com.saucedemo.tests.SocialLinksTest@79b06cab]" started-at="2026-10-05T11:43:51 UTC" name="socialIconOpensCorrectLink" description="Footer social icon opens the correct link in a new tab" data-provider="socialLinks" finished-at="2026-10-05T11:43:53 UTC" duration-ms="2032" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Facebook]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- socialIconOpensCorrectLink -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.saucedemo.tests.SocialLinksTest@79b06cab]" started-at="2026-10-05T11:43:53 UTC" name="closeBrowser" finished-at="2026-10-05T11:43:53 UTC" duration-ms="77" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.saucedemo.tests.SocialLinksTest -->
+      <class name="com.saucedemo.tests.ProductSortTest">
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.saucedemo.tests.ProductSortTest@4313f5bc]" started-at="2026-10-05T11:43:40 UTC" name="startBrowser" finished-at="2026-10-05T11:43:40 UTC" duration-ms="586" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.saucedemo.tests.ProductSortTest@4313f5bc]" started-at="2026-10-05T11:43:40 UTC" name="login" finished-at="2026-10-05T11:43:41 UTC" duration-ms="362" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="productsAreSortedByName(com.saucedemo.model.SortOption)[pri:0, instance:com.saucedemo.tests.ProductSortTest@4313f5bc]" started-at="2026-10-05T11:43:41 UTC" name="productsAreSortedByName" description="Product list follows the selected name sort order" data-provider="nameSortOptions" finished-at="2026-10-05T11:43:41 UTC" duration-ms="240" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[NAME_A_TO_Z]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productsAreSortedByName -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.saucedemo.tests.ProductSortTest@4313f5bc]" started-at="2026-10-05T11:43:41 UTC" name="closeBrowser" finished-at="2026-10-05T11:43:41 UTC" duration-ms="75" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.saucedemo.tests.ProductSortTest@4313f5bc]" started-at="2026-10-05T11:43:41 UTC" name="startBrowser" finished-at="2026-10-05T11:43:42 UTC" duration-ms="590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.saucedemo.tests.ProductSortTest@4313f5bc]" started-at="2026-10-05T11:43:42 UTC" name="login" finished-at="2026-10-05T11:43:42 UTC" duration-ms="371" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="productsAreSortedByName(com.saucedemo.model.SortOption)[pri:0, instance:com.saucedemo.tests.ProductSortTest@4313f5bc]" started-at="2026-10-05T11:43:42 UTC" name="productsAreSortedByName" description="Product list follows the selected name sort order" data-provider="nameSortOptions" finished-at="2026-10-05T11:43:42 UTC" duration-ms="202" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[NAME_Z_TO_A]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productsAreSortedByName -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.saucedemo.tests.ProductSortTest@4313f5bc]" started-at="2026-10-05T11:43:42 UTC" name="closeBrowser" finished-at="2026-10-05T11:43:42 UTC" duration-ms="75" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.saucedemo.tests.ProductSortTest -->
+      <class name="com.saucedemo.tests.LoginTest">
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.saucedemo.tests.LoginTest@6973bf95]" started-at="2026-10-05T11:43:36 UTC" name="startBrowser" finished-at="2026-10-05T11:43:39 UTC" duration-ms="2518" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method signature="standardUserCanLogIn()[pri:0, instance:com.saucedemo.tests.LoginTest@6973bf95]" started-at="2026-10-05T11:43:39 UTC" name="standardUserCanLogIn" description="Standard user can log in" finished-at="2026-10-05T11:43:40 UTC" duration-ms="807" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- standardUserCanLogIn -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.saucedemo.tests.LoginTest@6973bf95]" started-at="2026-10-05T11:43:40 UTC" name="closeBrowser" finished-at="2026-10-05T11:43:40 UTC" duration-ms="87" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.saucedemo.tests.LoginTest -->
+      <class name="com.saucedemo.tests.CheckoutTest">
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" started-at="2026-10-05T11:43:44 UTC" name="startBrowser" finished-at="2026-10-05T11:43:44 UTC" duration-ms="557" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" started-at="2026-10-05T11:43:44 UTC" name="login" finished-at="2026-10-05T11:43:45 UTC" duration-ms="355" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="startCheckoutWithOneProduct()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" started-at="2026-10-05T11:43:45 UTC" name="startCheckoutWithOneProduct" finished-at="2026-10-05T11:43:45 UTC" duration-ms="729" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startCheckoutWithOneProduct -->
+        <test-method signature="blankFirstNameShowsError()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" started-at="2026-10-05T11:43:45 UTC" name="blankFirstNameShowsError" description="Checkout is blocked with an error when first name is blank" finished-at="2026-10-05T11:43:46 UTC" duration-ms="875" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- blankFirstNameShowsError -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" started-at="2026-10-05T11:43:46 UTC" name="closeBrowser" finished-at="2026-10-05T11:43:46 UTC" duration-ms="75" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" started-at="2026-10-05T11:43:46 UTC" name="startBrowser" finished-at="2026-10-05T11:43:47 UTC" duration-ms="625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" started-at="2026-10-05T11:43:47 UTC" name="login" finished-at="2026-10-05T11:43:47 UTC" duration-ms="363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="startCheckoutWithOneProduct()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" started-at="2026-10-05T11:43:47 UTC" name="startCheckoutWithOneProduct" finished-at="2026-10-05T11:43:48 UTC" duration-ms="711" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startCheckoutWithOneProduct -->
+        <test-method signature="orderCanBeCompleted()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" started-at="2026-10-05T11:43:48 UTC" name="orderCanBeCompleted" description="Order can be completed with valid customer details" finished-at="2026-10-05T11:43:48 UTC" duration-ms="446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderCanBeCompleted -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.saucedemo.tests.CheckoutTest@4690b489]" started-at="2026-10-05T11:43:48 UTC" name="closeBrowser" finished-at="2026-10-05T11:43:49 UTC" duration-ms="77" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.saucedemo.tests.CheckoutTest -->
+      <class name="com.saucedemo.tests.CartTest">
+        <test-method is-config="true" signature="startBrowser()[pri:0, instance:com.saucedemo.tests.CartTest@363ee3a2]" started-at="2026-10-05T11:43:42 UTC" name="startBrowser" finished-at="2026-10-05T11:43:43 UTC" duration-ms="573" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.saucedemo.tests.CartTest@363ee3a2]" started-at="2026-10-05T11:43:43 UTC" name="login" finished-at="2026-10-05T11:43:43 UTC" duration-ms="364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="productCanBeAddedRemovedAndReAdded()[pri:0, instance:com.saucedemo.tests.CartTest@363ee3a2]" started-at="2026-10-05T11:43:43 UTC" name="productCanBeAddedRemovedAndReAdded" description="Product can be added to the cart, removed and added again" finished-at="2026-10-05T11:43:44 UTC" duration-ms="323" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productCanBeAddedRemovedAndReAdded -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.saucedemo.tests.CartTest@363ee3a2]" started-at="2026-10-05T11:43:44 UTC" name="closeBrowser" finished-at="2026-10-05T11:43:44 UTC" duration-ms="76" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.saucedemo.tests.CartTest -->
+    </test> <!-- SauceDemo user journeys -->
+  </suite> <!-- SauceDemo Suite -->
+</testng-results>
