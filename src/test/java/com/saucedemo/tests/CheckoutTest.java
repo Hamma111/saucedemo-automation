@@ -34,7 +34,7 @@ public class CheckoutTest extends LoggedInTest {
         Assert.assertEquals(overviewPage.itemNames(), List.of(BACKPACK), "Order summary items");
 
         CheckoutCompletePage completePage = assertLoaded(overviewPage.finish());
-        Assert.assertEquals(completePage.confirmationMessage(), "Thank you for your order!");
+        Assert.assertEquals(completePage.confirmationMessage(), "Deliberately wrong text");
     }
 
     @Test(
