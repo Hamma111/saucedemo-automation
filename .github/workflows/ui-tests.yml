@@ -28,8 +28,14 @@ jobs:
           cache: maven
 
       # Chrome is preinstalled on the runner; Selenium Manager fetches the matching driver.
+      # pipefail keeps a Maven failure from being hidden by tee's exit code.
       - name: Run tests
-        run: ./mvnw -B clean test -Dheadless=true -Dgroups="${{ inputs.groups }}" | tee console.log
+        shell: bash
+        env:
+          TEST_GROUPS: ${{ inputs.groups }}
+        run: |
+          set -o pipefail
+          ./mvnw -B clean test -Dheadless=true -Dgroups="$TEST_GROUPS" | tee console.log
 
       - name: Add results to the run summary
         if: always()
@@ -38,7 +44,7 @@ jobs:
             echo "## SauceDemo UI test results"
             echo '```'
             grep -E "START|PASSED|FAILED|SKIPPED|FINISHED" target/logs/test-run.log \
-              | grep -v "  > " || echo "No test log was produced."
+              | grep -v -E "  > |SETUP  " || echo "No test log was produced."
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 

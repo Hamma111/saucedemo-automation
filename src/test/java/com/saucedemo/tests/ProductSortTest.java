@@ -19,15 +19,17 @@ public class ProductSortTest extends LoggedInTest {
             dataProvider = "nameSortOptions",
             description = "Product list follows the selected name sort order")
     public void productsAreSortedByName(SortOption option) {
-        // Apply the other orders first, so the check cannot pass just because the option under
-        // test happens to be the page's default.
+        // Start from a different order and require the list to change, so the check cannot
+        // pass just because the option under test happens to be the page's default.
+        List<String> before = List.of();
         for (SortOption other : SortOption.values()) {
             if (other != option) {
-                inventoryPage.sortBy(other);
+                before = inventoryPage.sortBy(other).productNames();
             }
         }
 
         List<String> actual = inventoryPage.sortBy(option).productNames();
+        Assert.assertNotEquals(actual, before, "Choosing " + option + " did not reorder the list");
 
         List<String> expected = new ArrayList<>(actual);
         expected.sort(option.expectedOrder());

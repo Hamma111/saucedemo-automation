@@ -8,10 +8,23 @@ public final class Config {
     public static final String BASE_URL = System.getProperty("baseUrl", "https://www.saucedemo.com/");
     public static final String USERNAME = System.getProperty("username", "standard_user");
     public static final String PASSWORD = System.getProperty("password", "secret_sauce");
-    public static final Duration TIMEOUT =
-            Duration.ofSeconds(Long.parseLong(System.getProperty("timeoutSeconds", "10")));
+    public static final Duration TIMEOUT = Duration.ofSeconds(timeoutSeconds());
 
     private Config() {
+    }
+
+    private static long timeoutSeconds() {
+        String value = System.getProperty("timeoutSeconds", "10");
+        try {
+            long seconds = Long.parseLong(value.trim());
+            if (seconds > 0) {
+                return seconds;
+            }
+        } catch (NumberFormatException e) {
+            // Falls through to the warning below.
+        }
+        System.err.println("Ignoring invalid -DtimeoutSeconds=" + value + "; using 10 seconds.");
+        return 10;
     }
 
     /** Headless when asked for explicitly, or automatically on a CI server. */

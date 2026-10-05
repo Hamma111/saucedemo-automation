@@ -4,6 +4,7 @@ import com.saucedemo.config.Config;
 import com.saucedemo.utils.Log;
 import java.util.List;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -31,13 +32,17 @@ public abstract class BasePage {
         try {
             find(readyLocator());
             return true;
-        } catch (RuntimeException e) {
+        } catch (TimeoutException e) {
             return false;
         }
     }
 
     public String name() {
         return getClass().getSimpleName();
+    }
+
+    public String currentUrl() {
+        return driver.getCurrentUrl();
     }
 
     protected static By byTestId(String id) {
@@ -59,6 +64,16 @@ public abstract class BasePage {
 
     protected void type(By locator, String text) {
         Log.step(name() + ": type '" + text + "' into " + locator);
+        fill(locator, text);
+    }
+
+    /** Same as {@link #type} but keeps the value out of the logs. */
+    protected void typeSecret(By locator, String secret) {
+        Log.step(name() + ": type ******** into " + locator);
+        fill(locator, secret);
+    }
+
+    private void fill(By locator, String text) {
         WebElement field = find(locator);
         field.clear();
         field.sendKeys(text);
@@ -66,6 +81,11 @@ public abstract class BasePage {
 
     protected String textOf(By locator) {
         return find(locator).getText().trim();
+    }
+
+    /** Current content of an input field. */
+    protected String valueOf(By locator) {
+        return find(locator).getDomProperty("value");
     }
 
     protected boolean isPresent(By locator) {

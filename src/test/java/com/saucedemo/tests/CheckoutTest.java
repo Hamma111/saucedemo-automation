@@ -25,8 +25,12 @@ public class CheckoutTest extends LoggedInTest {
             groups = {"smoke", "checkout"},
             description = "Order can be completed with valid customer details")
     public void orderCanBeCompleted() {
-        CheckoutOverviewPage overviewPage = assertLoaded(
-                checkoutInfoPage.enterDetails(FIRST_NAME, LAST_NAME, ZIP).continueToOverview());
+        checkoutInfoPage.enterDetails(FIRST_NAME, LAST_NAME, ZIP);
+        Assert.assertEquals(checkoutInfoPage.firstName(), "ABC", "First name field");
+        Assert.assertEquals(checkoutInfoPage.lastName(), "DEF", "Last name field");
+        Assert.assertEquals(checkoutInfoPage.postalCode(), "123456", "Zip field");
+
+        CheckoutOverviewPage overviewPage = assertLoaded(checkoutInfoPage.continueToOverview());
         Assert.assertEquals(overviewPage.itemNames(), List.of(BACKPACK), "Order summary items");
 
         CheckoutCompletePage completePage = assertLoaded(overviewPage.finish());
@@ -41,7 +45,8 @@ public class CheckoutTest extends LoggedInTest {
 
         Assert.assertEquals(checkoutInfoPage.errorMessage(), "Error: First Name is required");
         Assert.assertTrue(
-                driver.getCurrentUrl().endsWith("/checkout-step-one.html"),
-                "Should stay on the customer details step but was " + driver.getCurrentUrl());
+                checkoutInfoPage.currentUrl().endsWith("/checkout-step-one.html"),
+                "Should stay on the customer details step but was "
+                        + checkoutInfoPage.currentUrl());
     }
 }

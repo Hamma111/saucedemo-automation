@@ -14,8 +14,8 @@ public class LoginTest extends BaseTest {
 
         assertLoaded(inventoryPage);
         Assert.assertTrue(
-                driver.getCurrentUrl().endsWith("/inventory.html"),
-                "Should land on the inventory page but was " + driver.getCurrentUrl());
+                inventoryPage.currentUrl().endsWith("/inventory.html"),
+                "Should land on the inventory page but was " + inventoryPage.currentUrl());
         Assert.assertFalse(inventoryPage.productNames().isEmpty(), "Products should be listed");
     }
 }
