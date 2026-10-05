@@ -19,6 +19,14 @@ public class ProductSortTest extends LoggedInTest {
             dataProvider = "nameSortOptions",
             description = "Product list follows the selected name sort order")
     public void productsAreSortedByName(SortOption option) {
+        // Apply the other orders first, so the check cannot pass just because the option under
+        // test happens to be the page's default.
+        for (SortOption other : SortOption.values()) {
+            if (other != option) {
+                inventoryPage.sortBy(other);
+            }
+        }
+
         List<String> actual = inventoryPage.sortBy(option).productNames();
 
         List<String> expected = new ArrayList<>(actual);
