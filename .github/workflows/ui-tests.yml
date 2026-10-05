@@ -2,7 +2,7 @@ name: UI Tests
 
 on:
   push:
-    branches: [main]
+    branches: [dev]
   pull_request:
   # Adds a "Run workflow" button on the Actions tab.
   workflow_dispatch:
