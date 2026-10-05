@@ -19,6 +19,62 @@ The sort and social tests are data-driven, so the suite reports 8 test results.
 > SauceDemo has rebranded its Twitter icon to X: the icon now links to
 > `https://x.com/saucelabs`, and that is what the test asserts.
 
+## Step-by-step setup
+
+All code lives on the **`dev`** branch, which is the repository's default branch. `main` is
+intentionally empty.
+
+1. **Install a JDK (17 or newer).** On macOS with Homebrew:
+
+   ```bash
+   brew install openjdk
+   ```
+
+   On Windows or Linux, install any JDK 17+ build (for example Eclipse Temurin). Check it
+   with `java -version`.
+
+2. **Install Google Chrome** if it is not already installed.
+
+3. **Clone the repository.** The clone checks out `dev` automatically.
+
+   ```bash
+   git clone https://github.com/hammadcui20/saucedemo-automation.git
+   ```
+
+4. **Go into the project folder.**
+
+   ```bash
+   cd saucedemo-automation
+   ```
+
+5. **Run the tests.** The first run downloads Maven, the libraries and ChromeDriver, so it
+   takes a few minutes; later runs take about 30 seconds.
+
+   ```bash
+   ./mvnw clean test
+   ```
+
+   On Windows: `mvnw.cmd clean test`. Add `-Dheadless=true` to run without a visible browser.
+
+6. **Check the result.** The console ends with `Tests run: 8, Failures: 0, Errors: 0,
+   Skipped: 0` and `BUILD SUCCESS`.
+
+7. **Open the HTML report.**
+
+   ```bash
+   open target/surefire-reports/index.html
+   ```
+
+   On Windows use `start`, on Linux `xdg-open`. See [Reports and logs](#reports-and-logs).
+
+8. **Run it in the pipeline.** Push to `dev` or open a pull request, or go to
+   **Actions > UI Tests > Run workflow**. When the run finishes, download the `test-report`
+   artifact from the run's summary page. See [CI/CD](#cicd-github-actions).
+
+9. **(Optional) Open it in an IDE.** In IntelliJ IDEA choose **File > Open** and select the
+   project folder; it reads `pom.xml` and sets everything up. Right-click
+   `src/test/resources/testng.xml` and choose **Run** to run the suite from the IDE.
+
 ## Prerequisites
 
 - **JDK 17 or newer** (`java -version`)
@@ -79,7 +135,7 @@ A report from a real run is committed in [`sample-report/`](sample-report/) as a
 The pipeline is defined in [`.github/workflows/ui-tests.yml`](.github/workflows/ui-tests.yml).
 It runs:
 
-- on every push to `main` and on every pull request
+- on every push to `dev` and on every pull request
 - on demand: **Actions > UI Tests > Run workflow** (optionally entering a group such as `smoke`)
 
 Each run executes the suite in headless Chrome, prints the pass/fail list on the run's
