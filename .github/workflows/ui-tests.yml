@@ -1,0 +1,56 @@
+name: UI Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Adds a "Run workflow" button on the Actions tab.
+  workflow_dispatch:
+    inputs:
+      groups:
+        description: "TestNG groups to run (e.g. smoke). Leave empty to run everything."
+        required: false
+        default: ""
+
+jobs:
+  ui-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      # Chrome is preinstalled on the runner; Selenium Manager fetches the matching driver.
+      - name: Run tests
+        run: ./mvnw -B clean test -Dheadless=true -Dgroups="${{ inputs.groups }}" | tee console.log
+
+      - name: Add results to the run summary
+        if: always()
+        run: |
+          {
+            echo "## SauceDemo UI test results"
+            echo '```'
+            grep -E "START|PASSED|FAILED|SKIPPED|FINISHED" target/logs/test-run.log \
+              | grep -v "  > " || echo "No test log was produced."
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload report, logs and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: |
+            target/surefire-reports/
+            target/logs/
+            target/screenshots/
+            console.log
+          if-no-files-found: warn
+          retention-days: 30
