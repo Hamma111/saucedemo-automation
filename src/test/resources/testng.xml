@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SauceDemo Suite" verbose="1">
+    <listeners>
+        <listener class-name="com.saucedemo.listeners.TestListener"/>
+    </listeners>
+
+    <test name="SauceDemo user journeys">
+        <classes>
+            <class name="com.saucedemo.tests.LoginTest"/>
+            <class name="com.saucedemo.tests.ProductSortTest"/>
+            <class name="com.saucedemo.tests.CartTest"/>
+            <class name="com.saucedemo.tests.CheckoutTest"/>
+            <class name="com.saucedemo.tests.SocialLinksTest"/>
+        </classes>
+    </test>
+</suite>
