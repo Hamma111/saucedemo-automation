@@ -5,12 +5,16 @@ import com.saucedemo.utils.BrowserUtils;
 import com.saucedemo.utils.Log;
 import java.nio.file.Path;
 import java.util.Arrays;
+import org.testng.IConfigurationListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-/** Writes a start/pass/fail line per test and saves a screenshot when a test fails. */
-public class TestListener implements ITestListener {
+/**
+ * Writes a start/pass/fail line per test and saves a screenshot when a test, or one of its
+ * setup methods, fails.
+ */
+public class TestListener implements ITestListener, IConfigurationListener {
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -25,12 +29,14 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         Log.error("FAILED  " + describe(result), result.getThrowable());
+        saveScreenshot(result);
+    }
 
-        if (result.getInstance() instanceof BaseTest test && test.getDriver() != null) {
-            String fileName = result.getMethod().getMethodName() + "-" + System.currentTimeMillis();
-            Path screenshot = BrowserUtils.takeScreenshot(test.getDriver(), fileName);
-            Log.info("Screenshot saved to " + screenshot);
-        }
+    /** A failing setup step (for example login) skips its tests, so capture the page here. */
+    @Override
+    public void onConfigurationFailure(ITestResult result) {
+        Log.error("SETUP FAILED  " + describe(result), result.getThrowable());
+        saveScreenshot(result);
     }
 
     @Override
@@ -46,6 +52,14 @@ public class TestListener implements ITestListener {
                 context.getPassedTests().size(),
                 context.getFailedTests().size(),
                 context.getSkippedTests().size()));
+    }
+
+    private static void saveScreenshot(ITestResult result) {
+        if (result.getInstance() instanceof BaseTest test && test.getDriver() != null) {
+            String fileName = result.getMethod().getMethodName() + "-" + System.currentTimeMillis();
+            Path screenshot = BrowserUtils.takeScreenshot(test.getDriver(), fileName);
+            Log.info("Screenshot saved to " + screenshot);
+        }
     }
 
     private static String describe(ITestResult result) {

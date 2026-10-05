@@ -131,6 +131,7 @@ src/test/resources/testng.xml   Suite definition
 ## Extending
 
 - **New page:** extend `BasePage`, implement `readyLocator()`, add action methods.
+- **Setup failures:** if a setup step such as login fails, the affected tests are reported as skipped and a screenshot of the page is still saved.
 - **New test:** extend `LoggedInTest` (or `BaseTest` to start on the login page), tag it with
   groups, and add the class to `src/test/resources/testng.xml`.
 - **New social icon:** add a `SocialLink` subclass and one line in the `socialLinks` data
