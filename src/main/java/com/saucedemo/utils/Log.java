@@ -16,6 +16,12 @@ public final class Log {
     public static final Path LOG_FILE = Path.of("target", "logs", "test-run.log");
     private static final Logger LOGGER = Logger.getLogger("saucedemo");
 
+    // Held in fields so java.util.logging cannot garbage-collect them and lose the level.
+    private static final Logger[] SELENIUM_DEVTOOLS_LOGGERS = {
+        Logger.getLogger("org.openqa.selenium.devtools.CdpVersionFinder"),
+        Logger.getLogger("org.openqa.selenium.chromium.ChromiumDriver"),
+    };
+
     static {
         System.setProperty(
                 "java.util.logging.SimpleFormatter.format",
@@ -25,7 +31,9 @@ public final class Log {
 
         // Selenium warns on every browser start when it has no DevTools mapping for the
         // installed Chrome version. The tests do not use DevTools, so hide the noise.
-        Logger.getLogger("org.openqa.selenium.devtools.CdpVersionFinder").setLevel(Level.SEVERE);
+        for (Logger seleniumLogger : SELENIUM_DEVTOOLS_LOGGERS) {
+            seleniumLogger.setLevel(Level.SEVERE);
+        }
 
         try {
             Files.createDirectories(LOG_FILE.getParent());
