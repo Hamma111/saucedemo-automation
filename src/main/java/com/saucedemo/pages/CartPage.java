@@ -1,6 +1,7 @@
 package com.saucedemo.pages;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +21,7 @@ public class CartPage extends BasePage {
     }
 
     public List<String> itemNames() {
-        return findAll(ITEM_NAMES).stream().map(WebElement::getText).toList();
+        return findAll(ITEM_NAMES).stream().map(WebElement::getText).collect(Collectors.toList());
     }
 
     public CheckoutInfoPage checkout() {

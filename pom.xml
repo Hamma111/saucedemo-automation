@@ -11,7 +11,7 @@
     <name>SauceDemo UI Automation</name>
 
     <properties>
-        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.release>11</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>4.50.0</selenium.version>
         <testng.version>7.12.0</testng.version>

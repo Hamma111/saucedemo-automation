@@ -61,7 +61,11 @@ public class TestListener implements ITestListener, IConfigurationListener {
     }
 
     private static void saveScreenshot(ITestResult result) {
-        if (result.getInstance() instanceof BaseTest test && test.getDriver() != null) {
+        if (!(result.getInstance() instanceof BaseTest)) {
+            return;
+        }
+        BaseTest test = (BaseTest) result.getInstance();
+        if (test.getDriver() != null) {
             String fileName = result.getMethod().getMethodName() + "-" + System.currentTimeMillis();
             Path screenshot = BrowserUtils.takeScreenshot(test.getDriver(), fileName);
             Log.info("Screenshot saved to " + screenshot);

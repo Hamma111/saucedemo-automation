@@ -4,6 +4,7 @@ import com.saucedemo.model.SocialLink;
 import com.saucedemo.model.SortOption;
 import com.saucedemo.utils.Log;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.Locale;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,7 +35,7 @@ public class InventoryPage extends BasePage {
     }
 
     public List<String> productNames() {
-        return findAll(PRODUCT_NAMES).stream().map(WebElement::getText).toList();
+        return findAll(PRODUCT_NAMES).stream().map(WebElement::getText).collect(Collectors.toList());
     }
 
     public InventoryPage addToCart(String productName) {

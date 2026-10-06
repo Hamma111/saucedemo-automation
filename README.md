@@ -24,14 +24,14 @@ The sort and social tests are data-driven, so the suite reports 8 test results.
 All code lives on the **`dev`** branch, which is the repository's default branch. `main` is
 intentionally empty.
 
-1. **Install a JDK (17 or newer).** On macOS with Homebrew:
+1. **Install a JDK (11 or newer; 17 is recommended).** On macOS with Homebrew:
 
    ```bash
    brew install openjdk
    ```
 
-   This installs the latest JDK, which is fine: anything from 17 up works. On Windows or
-   Linux, install any JDK 17+ build (for example Eclipse Temurin). Check it
+   This installs the latest JDK, which is fine: anything from 11 up works. On Windows or
+   Linux, install any JDK 11+ build (for example Eclipse Temurin). Check it
    with `java -version`.
 
 2. **Install Google Chrome** if it is not already installed.
@@ -81,7 +81,7 @@ intentionally empty.
 No IDE is required. The project runs from a terminal with one command, which is also exactly
 what the pipeline does.
 
-1. Install a JDK (17 or newer) and Google Chrome.
+1. Install a JDK (11 or newer) and Google Chrome.
 2. Open a terminal in the project folder.
 3. Run the tests:
 
@@ -113,7 +113,7 @@ if the IDE reports missing Selenium packages.
 
 ## Prerequisites
 
-- **JDK 17 or newer** (`java -version`)
+- **JDK 11 or newer** (`java -version`); 17 is recommended
 - **Google Chrome**
 
 That is all. Maven does not need to be installed, because the repo includes the Maven
@@ -256,7 +256,9 @@ src/test/resources/testng.xml   Suite definition
   **Maven** tool window (right-hand sidebar, or View > Tool Windows > Maven) and click
   **Reload All Maven Projects** (the circular-arrows icon). If there is no Maven tool window,
   right-click `pom.xml` and choose **Add as Maven Project**. Then check **File > Project
-  Structure > Project** has an SDK of 17 or newer. The command line is unaffected:
+  Structure > Project** has an SDK of 11 or newer. If the **Sync** tab shows download
+  errors, make sure the Maven tool window's **Toggle Offline Mode** button is off and see the
+  proxy entry below. The command line is unaffected:
   `mvnw.cmd clean test` (Windows) or `./mvnw clean test` works regardless of the IDE state.
 - **`Could not resolve dependencies` / `Could not transfer artifact` on the command line:**
   Maven cannot reach Maven Central to download Selenium and TestNG, usually because of a
