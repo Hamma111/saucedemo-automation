@@ -17,6 +17,10 @@ public final class DriverFactory {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--window-size=1440,1000", "--no-first-run", "--disable-notifications");
 
+        if (!Config.CHROME_BINARY.isEmpty()) {
+            options.setBinary(Config.CHROME_BINARY);
+        }
+
         if (Config.isHeadless()) {
             options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage");
         }

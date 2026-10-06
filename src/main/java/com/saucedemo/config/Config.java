@@ -9,6 +9,8 @@ public final class Config {
     public static final String USERNAME = System.getProperty("username", "standard_user");
     public static final String PASSWORD = System.getProperty("password", "secret_sauce");
     public static final Duration TIMEOUT = Duration.ofSeconds(timeoutSeconds());
+    /** Optional path to a Chrome/Chromium executable; empty means "let Selenium find Chrome". */
+    public static final String CHROME_BINARY = System.getProperty("chromeBinary", "").trim();
 
     private Config() {
     }

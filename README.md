@@ -140,6 +140,7 @@ Useful options:
 | `./mvnw clean test -Dthreads=1`           | Run test classes one at a time (default: 5 in parallel) |
 | `./mvnw clean test -DtimeoutSeconds=20`   | Change the element wait timeout (default 10 s) |
 | `./mvnw clean test -DbaseUrl=https://...` | Point the suite at another environment         |
+| `./mvnw clean test -DchromeBinary=/usr/bin/chromium` | Use a specific Chrome/Chromium executable (for example Chromium on Linux) |
 
 Headless mode switches on automatically when the `CI` environment variable is `true`.
 
