@@ -23,6 +23,10 @@ public final class Log {
         LOGGER.setUseParentHandlers(false);
         addHandler(new ConsoleHandler());
 
+        // Selenium warns on every browser start when it has no DevTools mapping for the
+        // installed Chrome version. The tests do not use DevTools, so hide the noise.
+        Logger.getLogger("org.openqa.selenium.devtools.CdpVersionFinder").setLevel(Level.SEVERE);
+
         try {
             Files.createDirectories(LOG_FILE.getParent());
             addHandler(new FileHandler(LOG_FILE.toString()));

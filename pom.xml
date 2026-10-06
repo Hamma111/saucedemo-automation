@@ -13,8 +13,9 @@
     <properties>
         <maven.compiler.release>11</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <selenium.version>4.50.0</selenium.version>
-        <testng.version>7.12.0</testng.version>
+        <!-- Deliberately conservative versions (Java 11 compatible, widely cached). -->
+        <selenium.version>4.12.1</selenium.version>
+        <testng.version>7.7.0</testng.version>
 
         <!-- TestNG groups to run, e.g. -Dgroups=smoke. Empty runs everything. -->
         <groups/>
