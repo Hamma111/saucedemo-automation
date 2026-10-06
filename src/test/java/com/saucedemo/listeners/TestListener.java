@@ -66,7 +66,9 @@ public class TestListener implements ITestListener, IConfigurationListener {
         }
         BaseTest test = (BaseTest) result.getInstance();
         if (test.getDriver() != null) {
-            String fileName = result.getMethod().getMethodName() + "-" + System.currentTimeMillis();
+            // Class name included: parallel classes share setup method names such as "login".
+            String fileName = result.getTestClass().getRealClass().getSimpleName()
+                    + "." + result.getMethod().getMethodName() + "-" + System.currentTimeMillis();
             Path screenshot = BrowserUtils.takeScreenshot(test.getDriver(), fileName);
             Log.info("Screenshot saved to " + screenshot);
         }

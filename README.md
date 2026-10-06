@@ -158,7 +158,7 @@ something fails):
 | `target/surefire-reports/testng-results.xml`  | TestNG XML results                                                 |
 | `target/surefire-reports/junitreports/`       | JUnit-style XML, understood by most CI dashboards                  |
 | `target/logs/test-run.log`                    | Step-by-step log (the same lines are printed to the console)       |
-| `target/screenshots/`                         | A screenshot per failure, named `<method>-<timestamp>.png`         |
+| `target/screenshots/`                         | A screenshot per failure, named `<Class>.<method>-<timestamp>.png` |
 
 Open `index.html` in a browser to read the report. Green means passed and red means failed;
 click a failed method to see the assertion message and stack trace, then find the matching
