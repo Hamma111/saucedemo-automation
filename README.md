@@ -119,6 +119,8 @@ if the IDE reports missing Selenium packages.
 That is all. Maven does not need to be installed, because the repo includes the Maven
 wrapper (`./mvnw`). ChromeDriver does not need to be installed either: Selenium Manager
 (built into Selenium 4) downloads the driver matching your Chrome on first run.
+On Linux machines that have Chromium instead of Google Chrome, the suite detects Chromium
+(and the distribution's `chromedriver`, if installed) on the `PATH` and uses them.
 
 ## Running the tests
 
@@ -140,7 +142,7 @@ Useful options:
 | `./mvnw clean test -Dthreads=1`           | Run test classes one at a time (default: 5 in parallel) |
 | `./mvnw clean test -DtimeoutSeconds=20`   | Change the element wait timeout (default 10 s) |
 | `./mvnw clean test -DbaseUrl=https://...` | Point the suite at another environment         |
-| `./mvnw clean test -DchromeBinary=/usr/bin/chromium` | Use a specific Chrome/Chromium executable (for example Chromium on Linux) |
+| `./mvnw clean test -DchromeBinary=/path/to/chrome` | Force a specific Chrome/Chromium executable |
 
 Headless mode switches on automatically when the `CI` environment variable is `true`.
 

@@ -7,7 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-/** Builds a ready-to-use Chrome session. Selenium Manager resolves the driver binary. */
+/**
+ * Builds a ready-to-use Chrome session. Selenium Manager resolves the driver binary, except on
+ * machines that only have Chromium, where {@link BrowserLocator} steps in.
+ */
 public final class DriverFactory {
 
     private DriverFactory() {
@@ -19,6 +22,8 @@ public final class DriverFactory {
 
         if (!Config.CHROME_BINARY.isEmpty()) {
             options.setBinary(Config.CHROME_BINARY);
+        } else {
+            BrowserLocator.chromiumFallback().ifPresent(path -> options.setBinary(path.toFile()));
         }
 
         if (Config.isHeadless()) {
