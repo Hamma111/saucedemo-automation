@@ -216,6 +216,13 @@ src/test/resources/testng.xml   Suite definition
 
 ## Troubleshooting
 
+- **IntelliJ shows `package org.openqa.selenium does not exist` / `cannot find symbol By`:**
+  the IDE has not loaded the Maven dependencies yet; the code itself is fine. Open the
+  **Maven** tool window (right-hand sidebar, or View > Tool Windows > Maven) and click
+  **Reload All Maven Projects** (the circular-arrows icon). If there is no Maven tool window,
+  right-click `pom.xml` and choose **Add as Maven Project**. Then check **File > Project
+  Structure > Project** has an SDK of 17 or newer. The command line is unaffected:
+  `mvnw.cmd clean test` (Windows) or `./mvnw clean test` works regardless of the IDE state.
 - **Driver download fails behind a proxy/firewall:** Selenium Manager needs internet access on
   first run. Set `HTTPS_PROXY`, or install ChromeDriver yourself and put it on your `PATH`.
 - **Surefire version:** the plugin is pinned to 3.5.x on purpose. Version 3.6.0 no longer
