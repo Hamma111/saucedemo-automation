@@ -258,7 +258,38 @@ src/test/resources/testng.xml   Suite definition
   right-click `pom.xml` and choose **Add as Maven Project**. Then check **File > Project
   Structure > Project** has an SDK of 17 or newer. The command line is unaffected:
   `mvnw.cmd clean test` (Windows) or `./mvnw clean test` works regardless of the IDE state.
-- **Driver download fails behind a proxy/firewall:** Selenium Manager needs internet access on
-  first run. Set `HTTPS_PROXY`, or install ChromeDriver yourself and put it on your `PATH`.
+- **`Could not resolve dependencies` / `Could not transfer artifact` on the command line:**
+  Maven cannot reach Maven Central to download Selenium and TestNG, usually because of a
+  corporate proxy or firewall. Tell Maven about the proxy in a `settings.xml` file at
+  `~/.m2/settings.xml` (`C:\Users\<you>\.m2\settings.xml` on Windows; create the folder and
+  file if they do not exist):
+
+  ```xml
+  <settings>
+    <proxies>
+      <proxy>
+        <id>company-proxy</id>
+        <active>true</active>
+        <protocol>https</protocol>
+        <host>proxy.example.com</host>
+        <port>8080</port>
+        <!-- Only if the proxy needs a login: -->
+        <username>your-username</username>
+        <password>your-password</password>
+        <nonProxyHosts>localhost|127.0.0.1</nonProxyHosts>
+      </proxy>
+    </proxies>
+  </settings>
+  ```
+
+  Replace the host and port with your proxy's values (your IT team or browser proxy settings
+  have them) and delete the username/password lines if the proxy does not require a login.
+  Then run `mvnw.cmd clean test` again. If the download still fails, check that the machine
+  can open <https://repo.maven.apache.org/maven2/> in a browser.
+
+- **Driver download fails behind a proxy/firewall:** Selenium Manager (which fetches
+  ChromeDriver) does not read `settings.xml`. Set the `HTTPS_PROXY` environment variable to
+  the same proxy, for example `https://proxy.example.com:8080`, or install ChromeDriver
+  yourself and put it on your `PATH`.
 - **Surefire version:** the plugin is pinned to 3.5.x on purpose. Version 3.6.0 no longer
   supports `testng.xml` suite files.
