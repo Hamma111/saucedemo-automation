@@ -76,6 +76,41 @@ intentionally empty.
    project folder; it reads `pom.xml` and sets everything up. Right-click
    `src/test/resources/testng.xml` and choose **Run** to run the suite from the IDE.
 
+## Running without an IDE
+
+No IDE is required. The project runs from a terminal with one command, which is also exactly
+what the pipeline does.
+
+1. Install a JDK (17 or newer) and Google Chrome.
+2. Open a terminal in the project folder.
+3. Run the tests:
+
+   Windows (Command Prompt or PowerShell):
+
+   ```bash
+   mvnw.cmd clean test
+   ```
+
+   macOS or Linux:
+
+   ```bash
+   ./mvnw clean test
+   ```
+
+4. Open `target/surefire-reports/index.html` in any browser to read the report.
+
+The first run downloads Maven, Selenium, TestNG and the matching ChromeDriver automatically,
+so it takes a few minutes and needs internet access. Later runs take under a minute. Nothing
+needs to be installed by hand: Selenium and TestNG are declared in `pom.xml` and Maven fetches
+them into `~/.m2` (`C:\Users\<you>\.m2` on Windows).
+
+You can also skip your machine entirely and run the suite on GitHub: **Actions > UI Tests >
+Run workflow**, then download the `test-report` artifact from the run page.
+
+If you do want an IDE, IntelliJ IDEA or VS Code (with the "Extension Pack for Java") both
+read `pom.xml` and set the project up on their own. See [Troubleshooting](#troubleshooting)
+if the IDE reports missing Selenium packages.
+
 ## Prerequisites
 
 - **JDK 17 or newer** (`java -version`)
