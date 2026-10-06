@@ -137,6 +137,7 @@ Useful options:
 | `./mvnw clean test -Dgroups=smoke`        | Run one group (see the table above)            |
 | `./mvnw clean test -Dgroups=cart,checkout` | Run several groups                             |
 | `./mvnw clean test -Dgroups=typo`         | Fails with "No tests were executed" (by design) |
+| `./mvnw clean test -Dthreads=1`           | Run test classes one at a time (default: 5 in parallel) |
 | `./mvnw clean test -DtimeoutSeconds=20`   | Change the element wait timeout (default 10 s) |
 | `./mvnw clean test -DbaseUrl=https://...` | Point the suite at another environment         |
 
@@ -235,8 +236,9 @@ src/test/resources/testng.xml   Suite definition
 
 ## Known limits
 
-- Tests run one at a time. The suite is not set up for TestNG parallel execution; each test
-  class keeps its browser in an instance field.
+- Test classes run in parallel (five at a time by default), each in its own browser. Methods
+  inside one class run one after another, which keeps the per-class state simple. Use
+  `-Dthreads=1` for a sequential run, for example when watching the browser.
 - The social link tests check which site the new tab lands on, not the content of that page,
   because X and Facebook may show a login wall to automated browsers.
 

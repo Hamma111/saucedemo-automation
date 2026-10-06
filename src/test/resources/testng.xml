@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="SauceDemo Suite" verbose="1">
+<suite name="SauceDemo Suite" verbose="1" parallel="classes" thread-count="5">
     <test name="SauceDemo user journeys">
         <classes>
             <class name="com.saucedemo.tests.LoginTest"/>

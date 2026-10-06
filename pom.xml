@@ -19,6 +19,8 @@
 
         <!-- TestNG groups to run, e.g. -Dgroups=smoke. Empty runs everything. -->
         <groups/>
+        <!-- Test classes run in parallel; -Dthreads=1 runs them one at a time. -->
+        <threads>5</threads>
     </properties>
 
     <dependencies>
@@ -55,6 +57,12 @@
                     <groups>${groups}</groups>
                     <!-- A mistyped group name should fail the build, not pass with 0 tests. -->
                     <failIfNoTests>true</failIfNoTests>
+                    <properties>
+                        <property>
+                            <name>threadcount</name>
+                            <value>${threads}</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>
